@@ -29,8 +29,10 @@ module.exports = {
   insert(user) {
       const result = Joi.validate(user, schema);
       if(result.error === null){
+        console.log('Inserting user');
         return db('users').insert(user);
       }else{
+        console.log('User already exists!');
           return Promise.reject(result.error);
       }
     // return insertIntoTableAndValidate('users', user, schema);
