@@ -6,8 +6,10 @@ import 'bootswatch/dist/cosmo/bootstrap.css';
 
 Vue.config.productionTip = false;
 
+
 new Vue({
   router,
   store,
   render: h => h(App),
 }).$mount('#app');
+
