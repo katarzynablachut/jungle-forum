@@ -9,6 +9,7 @@ require('dotenv').config();
 const { checkAuthHeaderSetUser ,checkAuthHeaderSetUserUnAuthorized, notFound, errorHandler } = require('./middlewares');
 
 const auth = require('./auth');
+const api = require('./api');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.get('/', (req, res) => {
   });
 
 app.use('/auth', auth);
+app.use('/api/v1/', api);
 
 app.use(notFound);
 app.use(errorHandler);
