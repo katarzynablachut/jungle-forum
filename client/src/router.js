@@ -20,6 +20,11 @@ Vue.use(Router);
       component: () => import('./views/LoginToken.vue'),
     },
     {
+      path: '/forum',
+      name: 'forum',
+      component: () => import('./views/Forum.vue'),
+    },
+    {
       path: '/about',
       name: 'about',
       // route level code-splitting
@@ -31,13 +36,13 @@ Vue.use(Router);
       path: '/admin',
       name: 'admin',
       component: () => import('./views/Admin.vue'),
-      beforeEnter(to, from, next) {
-        if (store.getters.isLoggedIn) {
-          next();
-        } else {
-          next('/');
-        }
-      },
+      // beforeEnter(to, from, next) {
+      //   if (store.getters.isLoggedIn) {
+      //     next();
+      //   } else {
+      //     next('/');
+      //   }
+      // },
     },
   ],
 });
